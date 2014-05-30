@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ *   Schema definition for the simple_crm entity
+ */
+
+
+/**
+ * Implementation of hook_schema
+ *   Defines the CRM entity
+ */
+function simple_crm_schema() {
+  $schema = array(
+    'simple_crm_contact' => array(
+      'description' => 'A very simple CRM contact entity table',
+      'fields' => array(
+        'scid' => array(
+          'description' => 'Serial contact ID',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'uuid' => array(
+          'description' => 'Unique Key: Universally unique identifier for this entity.',
+          'type' => 'varchar',
+          'length' => 128,
+          'not null' => FALSE,
+        ),
+        'display_name' => array(
+          'description' => 'Display name of a contact',
+          'type' => 'varchar',
+          'length' => 128,
+          'not null' => TRUE,
+          'default' => '',
+        ),
+        'sort_name' => array(
+          'description' => 'Display name of a contact',
+          'type' => 'varchar',
+          'length' => 128,
+          'not null' => TRUE,
+          'default' => '',
+        ),
+        'first_name' => array(
+          'description' => 'First name of a contact',
+          'type' => 'varchar',
+          'length' => 100,
+        ),
+        'last_name' => array(
+          'description' => 'First name of a contact',
+          'type' => 'varchar',
+          'length' => 100,
+        ),
+        'created' => array(
+          'description' => 'The Unix timestamp when the contact was created.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+        'changed' => array(
+          'description' => 'The Unix timestamp when the contact was most recently saved.',
+          'type' => 'int',
+          'not null' => TRUE,
+          'default' => 0,
+        ),
+      ),
+    )
+  );
+  
+  return $schema;
+}

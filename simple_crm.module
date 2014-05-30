@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ *   Demonstration of a simple D8 entity
+ */
+
+ 
+/**
+ * Entity URI callback.
+ *
+ * @param \Drupal\simple_crm\ContactInterface $contact
+ *   A contact entity.
+ *
+ * @return array
+ *   An array with 'path' as the key and the path to the contact as its value.
+ */
+function simple_crm_contact_uri(ContactInterface $contact) {
+  return new Url('simple_crm_contact.view', array(
+    'contact' => $contact->id(),
+  ));
+}
+
+
+ 

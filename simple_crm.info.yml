@@ -1,0 +1,9 @@
+# Drupal 8 info file for the Mail Sink
+name: Simple CRM
+description: 'A simple contact editor, implemented using the D8 Entity APIs.'
+package: Torenware
+type: module
+version: 1.0-alpha1
+core: 8.x
+#dependencies:
+#  - node
