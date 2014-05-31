@@ -40,9 +40,9 @@ use Drupal\Core\Session\AccountInterface;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "simple_crm_contact.view",
- *     "delete-form" = "simple_crm_contact.delete_confirm",
- *     "edit-form" = "simple_crm_contact.page_edit",
+ *     "canonical" = "simple_crm.contact.view",
+ *     "delete-form" = "simple_crm.contact.delete_confirm",
+ *     "edit-form" = "simple_crm.contact.edit",
  *   }
  * )
  */
@@ -92,7 +92,7 @@ class Contact extends ContentEntityBase implements ContactInterface {
 
     return \Drupal::entityManager()
       ->getAccessController($this->entityTypeId)
-      ->access($this, $operation, $this->prepareLangcode(), $account);
+      ->access($this, $operation, NULL, $account);
   }
 
 

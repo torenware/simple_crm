@@ -64,7 +64,13 @@ function simple_crm_schema() {
           'default' => 0,
         ),
       ),
-    )
+      'indexes' => array(
+        'contact_changed' => array('changed'),
+        'contact_created' => array('created'),
+        'contact_sort' => array('sort_name'),
+      ),
+      'primary key' => array('scid'),
+    ),    
   );
   
   return $schema;

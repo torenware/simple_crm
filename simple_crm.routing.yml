@@ -1,0 +1,28 @@
+# Routes link back via the Entity annotation.
+simple_crm.contact.add:
+  path: '/simple_crm/contact/add'
+  defaults:
+    _content: '\Drupal\simple_crm\Controller\ContactController::add'
+  requirements:
+    _permission: 'add contacts'
+simple_crm.contact.edit:
+  path: '/simple_crm/contact/{simple_crm_contact}/edit'
+  defaults:
+    _entity_form: 'simple_crm_contact.edit'
+  requirements:
+    _entity_access: 'simple_crm_contact.update'
+simple_crm.contact.view:
+  path: '/simple_crm/contact/{simple_crm_contact}'
+  defaults:
+    _content: '\Drupal\simple_crm\Controller\ContactController::page'
+    _title_callback: '\Drupal\simple_crm\Controller\ContactController::pageTitle'
+  requirements:
+    _entity_access: 'simple_crm_contact.view'
+simple_crm.contact.delete_confirm:
+  path: '/simple_crm/contact/{simple_crm_contact}/delete'
+  defaults:
+    _entity_form: 'simple_crm_contact.delete'
+    _title: 'Delete'
+  requirements:
+    _entity_access: 'simple_crm_contact.delete'
+
