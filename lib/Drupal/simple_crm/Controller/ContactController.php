@@ -50,7 +50,7 @@ class ContactController extends ControllerBase {
    * @return array
    *   An array suitable for drupal_render().
    */
-  public function page(ContactInterface $contact) {
+  public function page(ContactInterface $contact = NULL) {
     $build = $this->buildPage($contact);
 
     foreach ($contact->uriRelationships() as $rel) {
@@ -85,7 +85,7 @@ class ContactController extends ControllerBase {
    * @return string
    *   The page title.
    */
-  public function pageTitle(ContactInterface $contact) {
+  public function pageTitle(ContactInterface $contact = NULL) {
     return String::checkPlain($this->entityManager()->getTranslationFromContext($contact)->label());
   }
 

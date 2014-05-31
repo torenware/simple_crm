@@ -21,9 +21,9 @@ use Drupal\Core\Session\AccountInterface;
  *   id = "simple_crm_contact",
  *   label = @Translation("Contact"),
  *   bundle_label = @Translation("Contact type"),
+ *   admin_permission = "administer contacts",
  *   controllers = {
  *     "view_builder" = "Drupal\simple_crm\ContactViewBuilder",
- *     "access" = "Drupal\simple_crm\ContactAccessController",
  *     "form" = {
  *       "default" = "Drupal\simple_crm\ContactForm",
  *       "delete" = "Drupal\simple_crm\Form\ContactDeleteForm",

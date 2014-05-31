@@ -14,8 +14,9 @@ simple_crm.contact.edit:
 simple_crm.contact.view:
   path: '/simple_crm/contact/{simple_crm_contact}'
   defaults:
-    _content: '\Drupal\simple_crm\Controller\ContactController::page'
-    _title_callback: '\Drupal\simple_crm\Controller\ContactController::pageTitle'
+    # _content: '\Drupal\simple_crm\Controller\ContactController::page'
+    _entity_view: 'simple_crm_contact.view'
+    #_title_callback: '\Drupal\simple_crm\Controller\ContactController::pageTitle'
   requirements:
     _entity_access: 'simple_crm_contact.view'
 simple_crm.contact.delete_confirm:

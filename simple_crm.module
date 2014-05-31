@@ -5,7 +5,18 @@
  *   Demonstration of a simple D8 entity
  */
 
- 
+/**
+ * Implements hook_permission
+ */
+function simple_crm_permission() {
+  return array (
+    'administer contacts' => array(
+      'title' => t('Administer Simple CRM Contacts'),
+      'description'  => t('Full control over Simple CRM contacts and other data types'),
+    ),
+  );
+}
+
 /**
  * Entity URI callback.
  *

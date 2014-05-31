@@ -37,7 +37,7 @@ class ContactViewBuilder extends EntityViewBuilder {
         'view_mode' => $view_mode,
         'langcode' => $langcode,
         'in_preview' => !empty($entity->in_preview),
-        'token' => drupal_render_cache_generate_token(),
+        //'token' => drupal_render_cache_generate_token(),
       );
 
       $build[$id]['links'] = array(
@@ -77,7 +77,7 @@ class ContactViewBuilder extends EntityViewBuilder {
       // The simple_crm_contact 'submitted' info is not rendered in a standard way (renderable
       // array) so we have to add a cache tag manually.
       // @todo Delete this once https://drupal.org/simple_crm/2226493 lands.
-      $defaults['#cache']['tags']['user'][] = $entity->getOwnerId();
+      //$defaults['#cache']['tags']['user'][] = $entity->getOwnerId();
     }
 
     return $defaults;
