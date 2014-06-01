@@ -6,3 +6,10 @@ simple_crm.contact.edit:
   route_name: simple_crm.contact.edit
   base_route: simple_crm.contact.view
   title: "Edit Contact"
+simple_crm.contact.content_overview:
+  title: Contacts
+  route_name: simple_crm.content_overview
+  base_route: node.content_overview
+  weight: 10
+
+

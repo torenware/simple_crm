@@ -89,7 +89,7 @@ class ContactListBuilder extends EntityListBuilder {
       '#title' => $entity->label(),
       //'#suffix' => ' ' . drupal_render($mark),
     ) + $uri->toRenderArray();
-    $row['type'] = String::checkPlain(node_get_type_label($entity));
+    $row['type'] = String::checkPlain('Contact');
     $row['changed'] = $this->dateService->format($entity->getChangedTime(), 'short');
     return $row + parent::buildRow($entity);
   }

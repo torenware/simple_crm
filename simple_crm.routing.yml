@@ -26,4 +26,12 @@ simple_crm.contact.delete_confirm:
     _title: 'Delete'
   requirements:
     _entity_access: 'simple_crm_contact.delete'
+simple_crm.content_overview:
+  path: '/admin/content/contacts'
+  defaults:
+    _title: 'Contacts'
+    _entity_list: 'simple_crm_contact'
+  requirements:
+    _permission: 'administer contacts'
+
 
