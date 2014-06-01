@@ -1,0 +1,8 @@
+simple_crm.contact.view:
+  route_name: simple_crm.contact.view
+  base_route: simple_crm.contact.view
+  title: "View Contact"
+simple_crm.contact.edit:
+  route_name: simple_crm.contact.edit
+  base_route: simple_crm.contact.view
+  title: "Edit Contact"
