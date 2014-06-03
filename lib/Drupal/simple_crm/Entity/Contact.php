@@ -177,11 +177,7 @@ class Contact extends ContentEntityBase implements ContactInterface {
         'max_length' => 128,
       ))
       ->setDisplayOptions('view', array(
-        'label' => 'hidden',
-        'type' => 'string',
-        'weight' => -5,
-      ))
-      ->setDisplayOptions('form', array(
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -5,
       ))
@@ -196,15 +192,10 @@ class Contact extends ContentEntityBase implements ContactInterface {
         'max_length' => 128,
       ))
       ->setDisplayOptions('view', array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'type' => 'string',
         'weight' => -5,
-      ))
-      ->setDisplayOptions('form', array(
-        'type' => 'string',
-        'weight' => -5,
-      ))
-      ->setDisplayConfigurable('form', TRUE);
+      ));
 
 
     $fields['created'] = FieldDefinition::create('created')
@@ -214,6 +205,44 @@ class Contact extends ContentEntityBase implements ContactInterface {
     $fields['changed'] = FieldDefinition::create('changed')
       ->setLabel(t('Changed'))
       ->setDescription(t('The time that the contact was last edited.'));
+    
+    $fields['first_name'] = FieldDefinition::create('string')
+      ->setLabel(t('First Name'))
+      ->setDescription(t('First name of a contact'))
+      ->setRequired(TRUE)
+      ->setSettings(array(
+        'default_value' => '',
+        'max_length' => 128,
+      ))
+      ->setDisplayOptions('view', array(
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -7,
+      ))
+      ->setDisplayOptions('form', array(
+        'type' => 'string',
+        'weight' => -5,
+      ))
+      ->setDisplayConfigurable('form', TRUE);
+
+    $fields['last_name'] = FieldDefinition::create('string')
+      ->setLabel(t('Last Name'))
+      ->setDescription(t('First name of a contact'))
+      ->setRequired(TRUE)
+      ->setSettings(array(
+        'default_value' => '',
+        'max_length' => 128,
+      ))
+      ->setDisplayOptions('view', array(
+        'label' => 'inline',
+        'type' => 'string',
+        'weight' => -7,
+      ))
+      ->setDisplayOptions('form', array(
+        'type' => 'string',
+        'weight' => -5,
+      ))
+      ->setDisplayConfigurable('form', TRUE);
 
     return $fields;
   }
