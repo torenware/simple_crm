@@ -41,6 +41,7 @@ use Drupal\Core\Session\AccountInterface;
  *   },
  *   links = {
  *     "canonical" = "simple_crm.contact.view",
+ *     "admin-form" = "simple_crm_contact.account_settings",
  *     "delete-form" = "simple_crm.contact.delete_confirm",
  *     "edit-form" = "simple_crm.contact.edit",
  *   }
@@ -55,6 +56,22 @@ class Contact extends ContentEntityBase implements ContactInterface {
    */
   public function __construct(array $values) {
     parent::__construct($values, self::DEFAULT_CONTACT_TYPE);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function preSave(EntityStorageInterface $storage) {
+    $disp = $this->display_name->value;
+    if (empty($disp)) {
+      //TODO -- add to the interface so we can override
+      $first = $this->first_name->value;
+      $last = $this->last_name->value;
+      $this->display_name->value = "$first $last";
+    }
+    if (empty($this->sort_name->value)) {
+      $this->sort_name->value = "{$this->last_name->value}, {$this->first_name->value}";
+    }
   }
   
   /**
@@ -227,7 +244,7 @@ class Contact extends ContentEntityBase implements ContactInterface {
 
     $fields['last_name'] = FieldDefinition::create('string')
       ->setLabel(t('Last Name'))
-      ->setDescription(t('First name of a contact'))
+      ->setDescription(t('Last name of a contact'))
       ->setRequired(TRUE)
       ->setSettings(array(
         'default_value' => '',

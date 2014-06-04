@@ -68,15 +68,15 @@ class ContactForm extends ContentEntityForm {
       '#default_value' => $contact->getChangedTime(),
     );
 
-    $form['created'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Authored on'),
-      '#maxlength' => 25,
-      '#description' => t('Format: %time. The date format is YYYY-MM-DD and %timezone is the time zone offset from UTC. Leave blank to use the time of form submission.', array('%time' => !empty($contact->date) ? date_format(date_create($contact->date), 'Y-m-d H:i:s O') : format_date($contact->getCreatedTime(), 'custom', 'Y-m-d H:i:s O'), '%timezone' => !empty($contact->date) ? date_format(date_create($contact->date), 'O') : format_date($contact->getCreatedTime(), 'custom', 'O'))),
-      '#default_value' => !empty($contact->date) ? $contact->date : '',
-      '#group' => 'author',
-      '#access' => user_access('administer contacts'),
-    );
+    //$form['created'] = array(
+    //  '#type' => 'textfield',
+    //  '#title' => t('Authored on'),
+    //  '#maxlength' => 25,
+    //  '#description' => t('Format: %time. The date format is YYYY-MM-DD and %timezone is the time zone offset from UTC. Leave blank to use the time of form submission.', array('%time' => !empty($contact->date) ? date_format(date_create($contact->date), 'Y-m-d H:i:s O') : format_date($contact->getCreatedTime(), 'custom', 'Y-m-d H:i:s O'), '%timezone' => !empty($contact->date) ? date_format(date_create($contact->date), 'O') : format_date($contact->getCreatedTime(), 'custom', 'O'))),
+    //  '#default_value' => !empty($contact->date) ? $contact->date : '',
+    //  '#group' => 'author',
+    //  '#access' => user_access('administer contacts'),
+    //);
 
     return parent::form($form, $form_state, $contact);
   }

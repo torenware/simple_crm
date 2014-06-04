@@ -34,4 +34,12 @@ simple_crm.content_overview:
   requirements:
     _permission: 'administer contacts'
 
+simple_crm_contact.account_settings:
+  path: '/admin/config/simple_crm/settings'
+  defaults:
+    _form: '\Drupal\simple_crm\ContactSettingsForm'
+    _title: 'Simple CRM settings'
+  requirements:
+    _permission: 'administer contacts'
+  
 

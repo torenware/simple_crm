@@ -11,5 +11,9 @@ simple_crm.contact.content_overview:
   route_name: simple_crm.content_overview
   base_route: node.content_overview
   weight: 10
+simple_crm.settings_tab:
+  route_name: simple_crm_contact.account_settings
+  title: 'Settings'
+  base_route: simple_crm_contact.account_settings
 
 
