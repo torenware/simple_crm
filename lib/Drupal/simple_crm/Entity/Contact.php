@@ -43,7 +43,7 @@ use Drupal\Core\Session\AccountInterface;
  *     "canonical" = "simple_crm.contact.view",
  *     "admin-form" = "simple_crm_contact.account_settings",
  *     "delete-form" = "simple_crm.contact.delete_confirm",
- *     "edit-form" = "simple_crm.contact.edit",
+ *     "edit-form" = "simple_crm.contact.edit"
  *   }
  * )
  */
