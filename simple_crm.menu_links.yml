@@ -1,0 +1,12 @@
+simple_crm.admin_config_box:
+  route_name: simple_crm.admin_config_crm
+  title: 'Entity API Demo'
+  parent: simple_crm.admin_config
+  description: 'Simple CRM Entity Demo.'
+  weight: -5
+simple_crm.crm_settings:
+  title: 'Simple CRM settings'
+  parent: simple_crm.admin_config_crm
+  description: 'Settings for Simple CRM demo of the Entity API.'
+  route_name: simple_crm_contact.account_settings
+  weight: -20

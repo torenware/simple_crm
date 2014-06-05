@@ -34,6 +34,14 @@ simple_crm.content_overview:
   requirements:
     _permission: 'administer contacts'
 
+simple_crm.admin_config_crm:
+  path: '/admin/config/simple_crm'
+  defaults:
+    _content: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: 'Simple CRM Entity API Demo'
+  requirements:
+    _permission: 'administer contacts'
+  
 simple_crm_contact.account_settings:
   path: '/admin/config/simple_crm/settings'
   defaults:
